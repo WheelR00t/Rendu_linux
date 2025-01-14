@@ -58,10 +58,6 @@ echo "Activation du site"
 sudo a2ensite nextcloud.conf
 sudo systemctl reload apache2
 
-# Configurer SSL avec Certbot
-echo "Obtention du certificat SSL avec Certbot..."
-sudo certbot --apache -d vivelinux.fr
-
 # Sécurisation du dossier Nextcloud
 echo "Sécurisation du dossier Nextcloud..."
 sudo sed -i 's/Options Indexes FollowSymLinks/Options -Indexes FollowSymLinks/' /etc/apache2/sites-available/nextcloud.conf
